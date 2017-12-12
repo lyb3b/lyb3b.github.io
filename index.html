@@ -403,7 +403,9 @@
       
         
           
-          ＃如果是随机初始化的向量，是这么定义的：｀｀｀pythonself.word_embeds = nn.Embedding(vocab_size, embedding_dim)123456＃如果pretrained_weight是已经训练好的词向量，加载方式一如下：｀｀｀pythonself.word_embeds = nn.Embedding(vocab_size, embedding_dim)pretrained_weight = np.array(pretrained_weight)self.embed.weight.data.copy_(torch.from_numpy(pretrain
+          ＃如果是随机初始化的向量，是这么定义的：1self.word_embeds = nn.Embedding(vocab_size, embedding_dim)
+＃如果pretrained_weight是已经训练好的词向量，加载方式一如下：123self.word_embeds = nn.Embedding(vocab_size, embedding_dim)pretrained_weight = np.array(pretrained_weight)self.embed.weight.data.copy_(torch.from_numpy(pretrained_weight))
+https:/
           ...
           <!--noindex-->
           <div class="post-button text-center">
