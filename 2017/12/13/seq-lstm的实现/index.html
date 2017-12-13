@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troublesho">
+<meta name="description" content="一句话[‘Everybody’, ‘read’, ‘that’, ‘book’]每次一个词当成一个序列, 只取最终输出，则变为（1,50） 四个词叠加变为（4,50）一句话的输入为[5, 6, 7, 8]经过嵌入层变为(4,100)  123456789101112131415161718192021222324252">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用帮助">
-<meta property="og:url" content="https://ynuwm.github.io/2017/12/05/hello-world/index.html">
+<meta property="og:title" content="seq-lstm的实现">
+<meta property="og:url" content="https://ynuwm.github.io/2017/12/13/seq-lstm的实现/index.html">
 <meta property="og:site_name" content="大马哈鱼的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 一级标题文">
+<meta property="og:description" content="一句话[‘Everybody’, ‘read’, ‘that’, ‘book’]每次一个词当成一个序列, 只取最终输出，则变为（1,50） 四个词叠加变为（4,50）一句话的输入为[5, 6, 7, 8]经过嵌入层变为(4,100)  123456789101112131415161718192021222324252627282930313233343536373839404142434445">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ynuwm.github.io/2017/12/05/hello-world/001.JPG">
-<meta property="og:updated_time" content="2017-12-05T07:58:42.924Z">
+<meta property="og:updated_time" content="2017-12-13T05:39:31.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用帮助">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 一级标题文">
-<meta name="twitter:image" content="https://ynuwm.github.io/2017/12/05/hello-world/001.JPG">
+<meta name="twitter:title" content="seq-lstm的实现">
+<meta name="twitter:description" content="一句话[‘Everybody’, ‘read’, ‘that’, ‘book’]每次一个词当成一个序列, 只取最终输出，则变为（1,50） 四个词叠加变为（4,50）一句话的输入为[5, 6, 7, 8]经过嵌入层变为(4,100)  123456789101112131415161718192021222324252627282930313233343536373839404142434445">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://ynuwm.github.io/2017/12/05/hello-world/"/>
+  <link rel="canonical" href="https://ynuwm.github.io/2017/12/13/seq-lstm的实现/"/>
 
 
 
 
 
-  <title>使用帮助 | 大马哈鱼的博客</title>
+  <title>seq-lstm的实现 | 大马哈鱼的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://ynuwm.github.io/2017/12/05/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://ynuwm.github.io/2017/12/13/seq-lstm的实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李永彬">
@@ -330,7 +328,7 @@
             
             
               
-                使用帮助
+                seq-lstm的实现
               
             
           </h1>
@@ -345,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T15:58:42+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T13:38:12+08:00">
+                2017-12-13
               </time>
             
 
@@ -355,6 +353,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PyTorch/" itemprop="url" rel="index">
+                    <span itemprop="name">PyTorch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -380,24 +400,10 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="文档题头"><a href="#文档题头" class="headerlink" title="文档题头"></a>文档题头</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Learning PyTorch With Examples</span><br><span class="line">date: 2017-10-11 19:22:56</span><br><span class="line">categories: PyTorch</span><br><span class="line">tags: [keras,神经网络,无监督学习]</span><br><span class="line">comments: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h2 id="python代码"><a href="#python代码" class="headerlink" title="python代码"></a>python代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">i=<span class="number">5</span></span><br><span class="line">print(i)</span><br><span class="line"><span class="comment"># N is batch size; D_in is input dimension;</span></span><br><span class="line"><span class="comment"># H is hidden dimension; D_out is output dimension.</span></span><br><span class="line">N, D_in, H, D_out = <span class="number">64</span>, <span class="number">1000</span>, <span class="number">100</span>, <span class="number">10</span></span><br></pre></td></tr></table></figure>
-<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h2><p><strong>这里是粗体</strong><br><em>这里是斜体</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**这里是粗体**</span><br><span class="line">*这里是斜体*</span><br></pre></td></tr></table></figure></p>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>分割线的语法只需要三个 * 号</p>
-<hr>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
-<p>只需要在文本前加入 &gt; 这种尖括号（大于号）即可</p>
+        <blockquote>
+<p>一句话[‘Everybody’, ‘read’, ‘that’, ‘book’]<br>每次一个词当成一个序列, 只取最终输出，则变为（1,50） 四个词叠加变为（4,50）<br>一句话的输入为[5, 6, 7, 8]<br>经过嵌入层变为(4,100)</p>
 </blockquote>
-<h2 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h2><p><font color="#FF0000"><strong>红色加黑字体</strong></font> </p>
-<p><font size="3" color="red">红色3号字</font></p>
-<p><font size="2" color="blue">蓝色2号字</font></p>
-<p><font style="background:yellow">底色为红色的句子</font><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"#FF0000"</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>红色加黑字体<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">font</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">"3"</span> <span class="attr">color</span>=<span class="string">"red"</span>&gt;</span>红色3号字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">"2"</span> <span class="attr">color</span>=<span class="string">"blue"</span>&gt;</span>蓝色2号字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"background:yellow"</span>&gt;</span>底色为红色的句子<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![img](./hello-world/001.JPG)</span><br><span class="line">&lt;center&gt;图1 典型的自动编码器结构&lt;/center&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/2017/12/05/hello-world/001.JPG" alt="img"></p>
-<center>图1 典型的自动编码器结构</center> 
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Sun Nov 26 10:23:09 2017</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@author: bynn</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn, optim</span><br><span class="line"><span class="keyword">from</span> torch.autograd <span class="keyword">import</span> Variable</span><br><span class="line"></span><br><span class="line">training_data = [(<span class="string">"The dog ate the apple"</span>.split(),[<span class="string">"DET"</span>, <span class="string">"NN"</span>, <span class="string">"V"</span>, <span class="string">"DET"</span>, <span class="string">"NN"</span>]),</span><br><span class="line">                 (<span class="string">"Everybody read that book"</span>.split(), [<span class="string">"NN"</span>, <span class="string">"V"</span>, <span class="string">"DET"</span>,<span class="string">"NN"</span>])]</span><br><span class="line"></span><br><span class="line"><span class="comment">#word_to_idx  &#123;'Everybody': 5,'The': 0,'apple': 4,'ate': 2,'book': 8,'dog': 1,'read': 6,'that': 7,'the': 3&#125;</span></span><br><span class="line"><span class="comment">#tag_to_idx  &#123;'DET': 0, 'NN': 1, 'V': 2&#125;</span></span><br><span class="line">word_to_idx = &#123;&#125;</span><br><span class="line">tag_to_idx = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> context, tag <span class="keyword">in</span> training_data:</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> context:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> word_to_idx:</span><br><span class="line">            word_to_idx[word] = len(word_to_idx)</span><br><span class="line">    <span class="keyword">for</span> label <span class="keyword">in</span> tag:</span><br><span class="line">        <span class="keyword">if</span> label <span class="keyword">not</span> <span class="keyword">in</span> tag_to_idx:</span><br><span class="line">            tag_to_idx[label] = len(tag_to_idx)</span><br><span class="line">alphabet = <span class="string">'abcdefghijklmnopqrstuvwxyz'</span></span><br><span class="line"><span class="comment">#character_to_idx   &#123;'a': 0,'b': 1,'c': 2,'d': 3,....&#125;</span></span><br><span class="line">character_to_idx = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(alphabet)):</span><br><span class="line">    character_to_idx[alphabet[i]] = i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CharLSTM</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n_char, char_dim, char_hidden)</span>:</span>    <span class="comment">#参数为 26,10,50</span></span><br><span class="line">        super(CharLSTM, self).__init__()</span><br><span class="line">        self.char_embedding = nn.Embedding(n_char, char_dim)   <span class="comment">#参数为 26,10 </span></span><br><span class="line">        self.char_lstm = nn.LSTM(char_dim, char_hidden, batch_first=<span class="keyword">True</span>)  <span class="comment">#参数为 10,50</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span>                        <span class="comment">#输入为(batch_1,字母数)     数字形式</span></span><br><span class="line">        x = self.char_embedding(x)               <span class="comment">#输出为(batch_1,字母数,10)</span></span><br><span class="line">        <span class="comment"># h分为(h_n , c_n)</span></span><br><span class="line">        _, h = self.char_lstm(x)                 </span><br><span class="line">        <span class="keyword">return</span> h[<span class="number">0</span>]                              <span class="comment">#输出为(1,batch_1,50)</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">一句话['Everybody', 'read', 'that', 'book']</span></span><br><span class="line"><span class="string">每次一个词当成一个序列, 只取最终输出，则变为（1,50） 四个词叠加变为（4,50）</span></span><br><span class="line"><span class="string">一句话的输入为[5, 6, 7, 8]</span></span><br><span class="line"><span class="string">经过嵌入层变为(4,100)</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LSTMTagger</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="comment"># 参数为             9        26      10      100       50          128       3</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n_word, n_char, char_dim, n_dim, char_hidden, n_hidden, n_tag)</span>:</span></span><br><span class="line">        super(LSTMTagger, self).__init__()</span><br><span class="line">        self.word_embedding = nn.Embedding(n_word, n_dim)             <span class="comment"># 9,100</span></span><br><span class="line">        self.char_lstm = CharLSTM(n_char, char_dim, char_hidden)      <span class="comment"># 26,10,50</span></span><br><span class="line">        self.lstm = nn.LSTM(n_dim + char_hidden, n_hidden, batch_first=<span class="keyword">True</span>)   <span class="comment">#150,128</span></span><br><span class="line">        self.linear1 = nn.Linear(n_hidden, n_tag)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, word)</span>:</span>    <span class="comment">#输入为 [5, 6, 7, 8]  ['Everybody', 'read', 'that', 'book'] </span></span><br><span class="line">        char = torch.FloatTensor()</span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> word:</span><br><span class="line">            char_list = []</span><br><span class="line">            <span class="keyword">for</span> letter <span class="keyword">in</span> each:                          <span class="comment">#每次读入一个单词</span></span><br><span class="line">                char_list.append(character_to_idx[letter.lower()])</span><br><span class="line">            char_list = torch.LongTensor(char_list)      <span class="comment">#(字母数)     数字形式</span></span><br><span class="line">            char_list = char_list.unsqueeze(<span class="number">0</span>)           <span class="comment">#(1,字母数)   数字形式</span></span><br><span class="line">            <span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">                tempchar = self.char_lstm(Variable(char_list).cuda()) <span class="comment">#每个单词输出为(1,1,50)</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tempchar = self.char_lstm(Variable(char_list))</span><br><span class="line">            tempchar = tempchar.squeeze(<span class="number">0</span>)    <span class="comment">#输出为(1,50)   每个词的最终输出</span></span><br><span class="line">            char = torch.cat((char, tempchar.cpu().data), <span class="number">0</span>)  <span class="comment">#(1,50)叠加一直到(4,50), char是张量</span></span><br><span class="line">        <span class="comment">#char = char.squeeze(1)                         #不知道有什么用</span></span><br><span class="line">        <span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">            char = char.cuda()</span><br><span class="line">        char = Variable(char)                      <span class="comment">#char再变成变量</span></span><br><span class="line">        x = self.word_embedding(x)      <span class="comment">#输入size为 (4)   输出为(4,100)</span></span><br><span class="line">        x = torch.cat((x, char), <span class="number">1</span>)     <span class="comment">#(4,150)     注意：这里是合并</span></span><br><span class="line">        x = x.unsqueeze(<span class="number">0</span>)              <span class="comment">#(1,4,150)</span></span><br><span class="line">        x, _ = self.lstm(x)             <span class="comment">#(1,4,128)</span></span><br><span class="line">        x = x.squeeze(<span class="number">0</span>)                <span class="comment">#(4,128)</span></span><br><span class="line">        x = self.linear1(x)             <span class="comment">#(4,3)</span></span><br><span class="line">        y = F.log_softmax(x)            <span class="comment">#(4,3)</span></span><br><span class="line">        <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">model = LSTMTagger(</span><br><span class="line">    len(word_to_idx), len(character_to_idx), <span class="number">10</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">128</span>, len(tag_to_idx))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">    model = model.cuda()</span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br><span class="line">optimizer = optim.SGD(model.parameters(), lr=<span class="number">1e-2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_sequence</span><span class="params">(x, dic)</span>:</span></span><br><span class="line">    idx = [dic[i] <span class="keyword">for</span> i <span class="keyword">in</span> x]</span><br><span class="line">    idx = Variable(torch.LongTensor(idx))</span><br><span class="line">    <span class="keyword">return</span> idx</span><br><span class="line"></span><br><span class="line"><span class="comment">#word_to_idx  &#123;'Everybody': 5,'The': 0,'apple': 4,'ate': 2,'book': 8,'dog': 1,'read': 6,'that': 7,'the': 3&#125;</span></span><br><span class="line"><span class="comment">#tag_to_idx  &#123;'DET': 0, 'NN': 1, 'V': 2&#125;</span></span><br><span class="line"><span class="comment">#character_to_idx   &#123;'a': 0,'b': 1,'c': 2,'d': 3,....&#125;</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">300</span>):</span><br><span class="line">    print(<span class="string">'*'</span> * <span class="number">10</span>)</span><br><span class="line">    print(<span class="string">'epoch &#123;&#125;'</span>.format(epoch + <span class="number">1</span>))</span><br><span class="line">    running_loss = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> training_data:</span><br><span class="line">        word, tag = data      <span class="comment">#word是['Everybody', 'read', 'that', 'book'] tag是["NN", "V", "DET","NN"]</span></span><br><span class="line">        word_list = make_sequence(word, word_to_idx)   <span class="comment">#[5, 6, 7, 8]   size()是(4)</span></span><br><span class="line">        tag = make_sequence(tag, tag_to_idx)           <span class="comment">#[1, 2, 0, 1]    size()是(4)</span></span><br><span class="line">        <span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">            word_list = word_list.cuda()</span><br><span class="line">            tag = tag.cuda()</span><br><span class="line">        <span class="comment"># forward</span></span><br><span class="line">        out = model(word_list, word)       <span class="comment">#[5, 6, 7, 8]    ['Everybody', 'read', 'that', 'book'] </span></span><br><span class="line">        loss = criterion(out, tag)         <span class="comment">#out为softmax（4,3） tag为（4）未one-hot化</span></span><br><span class="line">        running_loss += loss.data[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># backward</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    print(<span class="string">'Loss: &#123;&#125;'</span>.format(running_loss / len(data)))</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line">input = make_sequence(<span class="string">"Everybody ate the apple"</span>.split(), word_to_idx)</span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available():</span><br><span class="line">    input = input.cuda()</span><br><span class="line"></span><br><span class="line">out = model(input, <span class="string">"Everybody ate the apple"</span>.split())</span><br><span class="line">print(out)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -434,15 +440,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/13/N-Gram模型实现方式/" rel="next" title="N-Gram模型实现方式">
+                <i class="fa fa-chevron-left"></i> N-Gram模型实现方式
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/pytorch加载已训练好的word-embedding/" rel="prev" title="pytorch加载已训练好的word-embedding">
-                pytorch加载已训练好的word-embedding <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,17 +497,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/000.jpg"
@@ -604,22 +601,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题"><span class="nav-number">1.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文档题头"><span class="nav-number">1.1.</span> <span class="nav-text">文档题头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python代码"><span class="nav-number">1.3.</span> <span class="nav-text">python代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗体与斜体"><span class="nav-number">1.4.</span> <span class="nav-text">粗体与斜体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">1.5.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">1.6.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体颜色"><span class="nav-number">1.7.</span> <span class="nav-text">字体颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片"><span class="nav-number">1.8.</span> <span class="nav-text">插入图片</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
